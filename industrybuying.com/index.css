@@ -8,6 +8,7 @@
  body{
     width: 100%;
     margin: auto;
+    background-color: rgb(242, 239, 239);
  }
  /* NAVBAR CSS START........ */
 
@@ -18,7 +19,7 @@
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    height: 12vh;
+    height: 10vh;
     
     margin: auto;
     /* border: 5px solid red; */
@@ -32,9 +33,11 @@
 }
 #right{
     display: flex;
-   gap: 20px;
+   gap: 10px;
     align-items: center;
-    justify-content: center;}
+    justify-content: center;
+    /* border: 1px solid red; */
+}
 
 
 /* SCERCH BAR STAR  */
@@ -57,7 +60,7 @@ align-items: center;
 }
 
 #search{
-    width:30vw;
+    width:23vw;
     height: 40px;
     border: none;
     padding: 10px;
@@ -73,7 +76,7 @@ align-items: center;
     color: rgba(0, 0, 0, 0);
     
 }
-input[type="submit"] {
+#mid input[type="submit"] {
 background-image: url("https://www.industrybuying.com/static/svg/search-icon-header.svg");
 background-position: center; 
 background-repeat: no-repeat;
@@ -91,11 +94,11 @@ background-size: 15px;
     display: flex;    
     align-items: center;
     margin: auto;
-    
-
+    /* border: 1px solid red; */
 }
 #nav_sign div{
 margin-left: 10px;
+width: 10vw;
 }
 #nav_sign a{
     text-decoration: none;
@@ -112,17 +115,20 @@ height: 45%;
 #nav_sign h4{
     color: white;
     margin: 0;
-    font-size: 90%;
+    font-size: 100%;
 }
 /* END  ..... */
 /* CART START..... */
 #nav_cart{
+    box-sizing: border-box;
 display: flex;
-
+padding-right:100px;
 width: 100%;
 height: 100%;
 align-items: center;
 margin: auto;
+/* border: 1px solid red; */
+
 }
 #nav_cart img{
     height: 45%;
@@ -161,6 +167,8 @@ width: 100%;
 box-sizing: border-box;
 align-items: center;
 margin: auto;
+/* border: 1px solid red; */
+
 }
 #nav_down div{
     display: flex;
@@ -184,8 +192,102 @@ margin: auto;
     text-align: center;   
 }
 /* NAVBAR CSSSS ***********DONE */
+/* <!-- BODY UPPER SLIDING WINDOW AND ALL OTHER DIV******* --> */
+#main{
+    width: 100%;
+   
+    
+}
+#head{
+    display: grid;
+    grid-template-columns: repeat(4,250px);
+    grid-template-rows: repeat(4,100px);
+    width: fit-content;
+    margin-top: 10px;
+    gap: 10px;
+    margin-left: 260px;
+   
+    
 
-@media only screen and (max-width: 939px) {
+    
+}
+#head :nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end:3 ;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    
+    
+  }
+  #head :nth-child(2) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+  #head :nth-child(3) {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  #head :nth-child(4) {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+  }
+  #head img{
+    width: 100%;
+    height: 100%;
+  }
+  #otpimg{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+    text-align: center;
+  }
+  #otpimg>img{
+    width: 5vw;
+    height: 5vh;
+  }
+  
+  #otp input[type="submit"]{
+    height: 100%;
+    width: 15%;
+    border: none;
+    background-color: rgb(75, 75, 75);
+    color: white;
+    border-top-right-radius:2px ;
+    border-bottom-right-radius:2px ;
+
+  }
+  #otp p{
+    font-size: 70%;
+
+  }
+  #otp input[type="number"]{
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    border-top-left-radius:2px ;
+    border-bottom-left-radius:2px ;
+  }
+  #slideshow img{
+    width: 100%;
+    height: 100%;
+
+  }
+@media only screen and (max-width: 1304px) {
     #navbar{
         width: 100%;
         height: 10vh;
@@ -219,13 +321,43 @@ margin: auto;
 
     }
 /* NAVBAR CSSSS ***********DONE */
+#head{
+    grid-template-columns: repeat(4,200px);
+grid-template-rows: repeat(4,100px);
 
+}
 
     
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1099px) {
 
-    #navbar{
+   
+/* NAVBAR CSSSS ***********DONE */
+#head{
+    grid-template-columns: repeat(4,150px);
+grid-template-rows: repeat(4,100px);
+
+}
+#otp p{
+    font-size: 41%;
+
+  }
+}
+
+
+
+
+@media only screen and (max-width: 906px) {
+    #head{
+        grid-template-columns: repeat(4,150px);
+    grid-template-rows: repeat(4,80px);
+    margin-left: 150px;
+    }
+}
+
+
+@media only screen and (max-width: 791px) {
+ #navbar{
         width: 100%;
         height: 10vh;
     }
@@ -272,6 +404,34 @@ margin: auto;
         height: 15px;
 
     }
-/* NAVBAR CSSSS ***********DONE */
 
+    #head{
+        grid-template-columns: repeat(4,150px);
+    grid-template-rows: repeat(4,80px);
+    margin: auto;
+    }
+}
+@media only screen and (max-width: 791px) {
+    #head{
+        grid-template-columns: repeat(4,100px);
+    grid-template-rows: repeat(4,60px);
+    margin: auto;
+    }
+#otp p{
+    font-size: 5px;
+    
+
+}
+#otp input[type="submit"]{
+    height: 10px;
+    font-size: 7px;
+}
+#otp input[type="number"]{
+    height: 10px;
+   font-size: 7px;
+}
+#otp{
+    padding: 10px;
+    padding-bottom: 30px;
+}
 }
