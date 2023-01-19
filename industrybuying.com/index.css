@@ -23,7 +23,13 @@
     
     margin: auto;
     /* border: 5px solid red; */
-}
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
 #left{
     
     justify-content: center;
@@ -131,8 +137,7 @@ margin: auto;
 
 }
 #nav_cart img{
-    height: 45%;
-    
+    height: 45%;   
 }
 #nav_cart a{
     text-decoration: none;
@@ -140,9 +145,7 @@ margin: auto;
     margin-top: 5px;
     font-size: 90%;
     font-weight: 50;
-    margin-left: 5px;
-
-    
+    margin-left: 5px; 
 }
 #nav_cart div{
     display: flex;
@@ -156,8 +159,7 @@ margin: auto;
     border: none;
     text-align: center;
     height: 15px;
-    width: 50%;
-    
+    width: 50%;   
 }
 /* END...... */
 
@@ -168,7 +170,6 @@ box-sizing: border-box;
 align-items: center;
 margin: auto;
 /* border: 1px solid red; */
-
 }
 #nav_down div{
     display: flex;
@@ -195,8 +196,7 @@ margin: auto;
 /* <!-- BODY UPPER SLIDING WINDOW AND ALL OTHER DIV******* --> */
 #main{
     width: 100%;
-   
-    
+    margin-top: 70px;
 }
 #head{
     display: grid;
@@ -206,18 +206,12 @@ margin: auto;
     margin-top: 10px;
     gap: 10px;
     margin-left: 260px;
-   
-    
-
-    
 }
 #head :nth-child(1) {
     grid-column-start: 1;
     grid-column-end:3 ;
     grid-row-start: 1;
     grid-row-end: 5;
-    
-    
   }
   #head :nth-child(2) {
     grid-column-start: 3;
@@ -287,6 +281,188 @@ margin: auto;
     height: 100%;
 
   }
+  /* COMPLETED*******-
+   */
+
+
+
+   /* MAIN2 STARTED*********** */
+   #main2{
+    display: flex; 
+    padding-top: 10px;
+    width: fit-content;
+    gap: 10px;
+    margin: auto;
+    margin-left: 260px;
+    height: fit-content;
+   }
+   #left1{
+    width: 100%;
+    height: 100%;
+   }
+
+   #right1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    
+   }
+   #right1 :nth-child(1){
+    width: 210px;
+    height: ;
+   }
+   #right1 :nth-child(2){
+    width: 210px;
+    height: 237px;
+   }
+   #right1 img{
+    width: 100%;
+    height: 100%;
+   }
+   #product1{
+    display: grid;
+    grid-template-columns: repeat(4,200px);
+    grid-template-rows:repeat(2,292px) ;
+    gap: 4px;
+    
+   }
+   #product1 img{
+    width: 100%;
+   }
+   #product1 hr{
+    border-top: 1px dashed #8c8b8b;
+   }
+   #detail{
+    text-align: start;
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(49, 45, 45);
+    
+   }
+   #des{
+    text-align:start ;
+    margin-left: 5px;
+    font-size: 70%;
+    color: rgb(89, 88, 88);
+
+   }
+   #price{
+    text-align: end ;
+    margin-right: 5px;
+    color: #FF0000;
+   }
+   .card1{
+    background-color: white;
+
+   }
+   #bar1{
+    width: 100%;
+   }
+   #bar1 img{
+    width: 100%;
+   }
+   /* main2 completetd   ****** */
+   #bar2{
+    width: 1030px;
+    margin-left: 260px;
+    padding-top: 10px;
+   
+   
+    
+   }
+   #bar2 img{
+    width: 100%;
+   }
+   #main3{
+    display: grid;
+    grid-template-columns: repeat(5,203px);
+    grid-template-rows:repeat(2,292px) ;
+    gap: 4px;
+    margin-left: 260px;
+   }
+   #main3 img{
+    width: 100%;
+   }
+   #main>h3{
+    margin-left: 260px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+   #main3 hr{
+    border-top: 1px dashed #8c8b8b;
+   }
+   #main4{
+    display: grid;
+    grid-template-columns: repeat(5,203px);
+    grid-template-rows:repeat(2,292px) ;
+    gap: 4px;
+    margin-left: 260px;
+   }
+   #main4 img{
+    width: 100%;
+   }
+   #main4 hr{
+    border-top: 1px dashed #8c8b8b;
+   }
+   /* new******************* */
+   .navigation{
+    display: flex;
+    width: 1030px;
+    margin-left: 260px;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+   }
+   .navigation button{
+    border: none;
+    color: white;
+    background-color: #FF4500;
+    width: 90px;
+    height: 32px;
+    border-radius: 2px;
+   }
+
+#main5{
+    display: flex;
+    width: 1030px;
+    margin-left: 260px;
+
+}
+#left2{
+    display: grid;
+    grid-template-columns: repeat(4,200px);
+    grid-template-rows:repeat(2,200px) ;
+    gap: 2px;
+    text-align: center;
+}
+#left2 img{
+    width: 100%;
+    
+}
+.card2{
+    background-color: white;
+    padding-top: 10px;
+}
+.card2>.det{
+margin-top: 20px;
+}
+.card2>.des2{
+    color: rgb(1, 155, 1);
+    font-size: 12px;
+    margin-top: 10px;
+}
+#right2{
+width:235px;
+height: 400px;
+}
+#right2 img{
+    width: 100%;
+    height: 100%;
+}
 @media only screen and (max-width: 1304px) {
     #navbar{
         width: 100%;
@@ -320,118 +496,12 @@ margin: auto;
         padding: 5px;
 
     }
-/* NAVBAR CSSSS ***********DONE */
-#head{
-    grid-template-columns: repeat(4,200px);
-grid-template-rows: repeat(4,100px);
 
 }
 
-    
-}
-@media only screen and (max-width: 1099px) {
 
    
-/* NAVBAR CSSSS ***********DONE */
-#head{
-    grid-template-columns: repeat(4,150px);
-grid-template-rows: repeat(4,100px);
-
-}
-#otp p{
-    font-size: 41%;
-
-  }
-}
 
 
 
-
-@media only screen and (max-width: 906px) {
-    #head{
-        grid-template-columns: repeat(4,150px);
-    grid-template-rows: repeat(4,80px);
-    margin-left: 150px;
-    }
-}
-
-
-@media only screen and (max-width: 791px) {
- #navbar{
-        width: 100%;
-        height: 10vh;
-    }
-    #right{
-    gap: 0px;
-    }
-    #mid{
-        display: flex;
-        
-    }
-    #left{
-        
-    }
-    #categories{
-        height: 25px;
-        width: 10%;
-    }
-    #search{
-        width: 15vw;
-        height: 25px;
-        font-size: 10px;
-        
-        
-    }
-    #scr_button{
-        height: 25px;
-        width: 20px;
-    }
-    #nav_sign img{
-        width: 15px;
-        height: 15px;
-
-        
-    }
-    #nav_cart img{
-        
-        width: 15px;
-        height: 15px;
-
-    }
-    #nav_down img{
-    
-        width: 15px;
-        height: 15px;
-
-    }
-
-    #head{
-        grid-template-columns: repeat(4,150px);
-    grid-template-rows: repeat(4,80px);
-    margin: auto;
-    }
-}
-@media only screen and (max-width: 791px) {
-    #head{
-        grid-template-columns: repeat(4,100px);
-    grid-template-rows: repeat(4,60px);
-    margin: auto;
-    }
-#otp p{
-    font-size: 5px;
-    
-
-}
-#otp input[type="submit"]{
-    height: 10px;
-    font-size: 7px;
-}
-#otp input[type="number"]{
-    height: 10px;
-   font-size: 7px;
-}
-#otp{
-    padding: 10px;
-    padding-bottom: 30px;
-}
-}
+ 
