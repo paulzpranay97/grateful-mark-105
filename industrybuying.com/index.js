@@ -59,28 +59,17 @@ select.addEventListener("change", (event) => {
             console.log(err)
         }
     }
-    // let filterBy = document.getElementById("filter");
-    // filterBy.addEventListener("change",()=>{
-    //   window.location.href ="./product.html"
-    //   FetchData()
-    // })
-    // function FilterData(data){
-    //   let filterValue = filterBy.value;
-    //   if(filterValue===""){
-    //     window.location.href ="./index.html"
-    //   }else{
-    //     data=data.filter((product)=>{
-    //       return product.category == filterValue;
-    //     })
-        
-    //     DisplayProduct(data)
-    //   }
-    // }
+    
    
  
       let main1 = document.querySelector("#product1");
       let main2 = document.querySelector("#main3");
       let main3 = document.querySelector("#main4");
+      let main4 = document.querySelector("#main5");
+      let main5 = document.querySelector("#main6");
+      let main6 = document.querySelector("#main7");
+
+
 
     function Display(data) {
       data.forEach((element) => {
@@ -103,10 +92,14 @@ select.addEventListener("change", (event) => {
             let hed3 = document.createElement("h3");
             hed3.innerText=`₹${element.price}`
             
+
+            let btn = document.createElement("button");
+            btn.setAttribute("class","btn");
+            btn.innerText = "Buy Now";
             
     
            
-            indiv.append(img, para1, para2,hed3);
+            indiv.append(img, para1, para2,hed3,btn);
             main1.append(indiv);
 
         }
@@ -132,9 +125,11 @@ select.addEventListener("change", (event) => {
           hed3.innerText=`₹${element.price}`
           
           
-  
+          let btn = document.createElement("button");
+          btn.setAttribute("class","btn");
+          btn.innerText = "Buy Now"
          
-          indiv.append(img, para1, para2,hed3);
+          indiv.append(img, para1, para2,hed3,btn);
           main2.append(indiv);
 
       }
@@ -160,13 +155,98 @@ select.addEventListener("change", (event) => {
         hed3.innerText=`₹${element.price}`
         
         
-
+        let btn = document.createElement("button");
+        btn.setAttribute("class","btn");
+        btn.innerText = "Buy Now"
        
-        indiv.append(img, para1, para2,hed3);
+        indiv.append(img, para1, para2,hed3,btn);
         main3.append(indiv);
 
     }
+
+    if(element.category==="Office Supplies"){
+            
+      let indiv = document.createElement("div");
+      indiv.setAttribute("class","card1")
+      let img=document.createElement("img")
+      img.setAttribute("src",element.image)
+
+      let para1 = document.createElement("p");
+      para1.setAttribute("id","detail")
+      para1.innerText=element.Description
+
+      let para2 = document.createElement("p");
+      para2.setAttribute("id","des")
+      para2.innerText=element.title
+
+      let hed3 = document.createElement("h3");
+      hed3.innerText=`₹${element.price}`
+      
+      let btn = document.createElement("button");
+      btn.setAttribute("class","btn");
+      btn.innerText = "Buy Now"
+
+     
+      indiv.append(img, para1, para2,hed3,btn);
+      main4.append(indiv);
+
+  }
+
+  if(element.category==="Power Tools"){
+            
+    let indiv = document.createElement("div");
+    indiv.setAttribute("class","card1")
+    let img=document.createElement("img")
+    img.setAttribute("src",element.image)
+
+    let para1 = document.createElement("p");
+    para1.setAttribute("id","detail")
+    para1.innerText=element.Description
+
+    let para2 = document.createElement("p");
+    para2.setAttribute("id","des")
+    para2.innerText=element.title
+
+    let hed3 = document.createElement("h3");
+    hed3.innerText=`₹${element.price}`
+    
+    
+
+   
+    indiv.append(img, para1, para2,hed3);
+    main5.append(indiv);
+
+}
+
+if(element.category==="IT & Electronics"){
+            
+  let indiv = document.createElement("div");
+  indiv.setAttribute("class","card1")
+  let img=document.createElement("img")
+  img.setAttribute("src",element.image)
+
+  let para1 = document.createElement("p");
+  para1.setAttribute("id","detail")
+  para1.innerText=element.Description
+
+  let para2 = document.createElement("p");
+  para2.setAttribute("id","des")
+  para2.innerText=element.title
+
+  let hed3 = document.createElement("h3");
+  hed3.innerText=`₹${element.price}`
+  
+  
+
+ 
+  indiv.append(img, para1, para2,hed3);
+  main6.append(indiv);
+
+}
+    
+  
        
       });
       
     }
+    

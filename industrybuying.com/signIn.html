@@ -22,7 +22,7 @@
       <h3 id="heading">Email ID / Mobile No.</h3>
       <form>
         <input type="email" id="email" placeholder="Enter your Email" /><br>
-        
+        <input type="number"id="mobile" placeholder="Mobile No."><br>
         <input type="password" id="password" placeholder="Enter your Password" /><br>
         <a href="./index.html"><button id="cont" value="CONTINUE">CONTINUE</button></a>
         <h4>---------------OR---------------</h4>
@@ -41,7 +41,7 @@
     </div>
   </body>
   <script>
-        let email=document.getElementById("email")
+         let email=document.getElementById("email")
         let mobile=document.getElementById("mobile")
         let password=document.getElementById("password");
 
@@ -51,7 +51,7 @@
           display(storeddata);
           function display(data){
            data.forEach((e,i)=>{
-            if(email.value===e.Email  && password.value ===e.Password){
+            if(email.value===e.Email  && password.value ===e.Password && mobile.value===e.MobileNo){
               document.getElementById("heading").innerText="Sign in Successful";
               alert("Login Sucessfull")
               window.location.href="./index.html"

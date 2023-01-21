@@ -37,11 +37,11 @@
 </div>
 </body>
 <script>
-  let name = document.getElementById("name");
+ let name = document.getElementById("name");
   let phone=document.getElementById("mobile")
   let email = document.getElementById("email");
   let password = document.getElementById("password");
-  let aclist = [];
+  let personData = [];
   document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     let obj = {
@@ -50,16 +50,10 @@
       Password: password.value,
       MobileNo:phone.value
     }
-
-
-   
-
-  aclist.push(obj);
-    
-  localStorage.setItem("account-data", JSON.stringify(aclist));
-    
-
-  });
+    personData.push(obj);
+    localStorage.setItem("account-data", JSON.stringify(personData));
+    window.location.href ="./index.html"
+  })
   
   
   
