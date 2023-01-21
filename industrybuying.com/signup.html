@@ -16,16 +16,16 @@
     
   </div>
   <div id="signup">
-    <a href="./index.html"><img src="https://cdn.fcglcdn.com/brainbees/images/n/fc-logo-s.jpg" alt=""></a>
+    <a href="./index.html"><img src="https://www.industrybuying.com/static/images/industry-buying-white-logo.png" alt=""></a>
 
     <h2>Register</h2>
     <h3 id="heading">Email ID/Mobile No.</h3>
 
     <form>
-      <input type="text" id="name" placeholder="Full Name"><br>
-      <input type="number"id="mobile" placeholder="Mobile No."><br>
-      <input type="email" id="email" placeholder="Emaid ID"><br>
-      <input type="password" id="password" placeholder="Password"><br>
+      <input type="text" id="name" placeholder="Enter Full Name"><br>
+      <input type="number"id="mobile" placeholder="Enter Mobile No."><br>
+      <input type="email" id="email" placeholder="Enter Emaid ID"><br>
+      <input type="password" id="password" placeholder="Enter Password"><br>
       <p>Password must be at least 8 characters long with 1 Uppercase, 1 Lowercase & 1 Numeric character.</p>
       <input type="submit" value="Submit"  class="submit"/>
     </form>
@@ -41,7 +41,7 @@
   let phone=document.getElementById("mobile")
   let email = document.getElementById("email");
   let password = document.getElementById("password");
-  let personData = [];
+  let aclist = [];
   document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     let obj = {
@@ -50,9 +50,20 @@
       Password: password.value,
       MobileNo:phone.value
     }
-    personData.push(obj);
-    localStorage.setItem("account-data", JSON.stringify(personData));
-  })
+
+
+   
+
+  aclist.push(obj);
+    
+  localStorage.setItem("account-data", JSON.stringify(aclist));
+    
+
+  });
+  
+  
+  
+ 
 
 </script>
 

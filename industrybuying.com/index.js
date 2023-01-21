@@ -21,3 +21,152 @@ function slideshowFun(images){
 window.addEventListener("load", function () {
     setInterval(slideshowFun,2000,slideImages);
   });
+
+
+  let Cart= JSON.parse(localStorage.getItem("cart"))||[];
+  let totalPro = document.getElementById("top")
+  let count=0;
+for(let i=0;i<Cart.length;i++)
+{
+  count+=Cart[i].quantity;
+}
+
+totalPro.textContent=count;
+
+
+const select = document.getElementById("filter");
+select.addEventListener("change", (event) => {
+  const category = event.target.value;
+  if (category) {
+    const productPageUrl = `product.html?category=${category}`;
+    window.location.href = productPageUrl;
+    
+  }
+});
+
+
+
+
+  let api=(" https://63c66b68d307b7696738a8cf.mockapi.io/products")
+    fectheddata()
+    async function fectheddata(){
+        try{
+            let request=await fetch(api)
+            let data= await request.json()
+            console.log(data);
+            Display(data)
+        }catch(err){
+            console.log(err)
+        }
+    }
+    // let filterBy = document.getElementById("filter");
+    // filterBy.addEventListener("change",()=>{
+    //   window.location.href ="./product.html"
+    //   FetchData()
+    // })
+    // function FilterData(data){
+    //   let filterValue = filterBy.value;
+    //   if(filterValue===""){
+    //     window.location.href ="./index.html"
+    //   }else{
+    //     data=data.filter((product)=>{
+    //       return product.category == filterValue;
+    //     })
+        
+    //     DisplayProduct(data)
+    //   }
+    // }
+   
+ 
+      let main1 = document.querySelector("#product1");
+      let main2 = document.querySelector("#main3");
+      let main3 = document.querySelector("#main4");
+
+    function Display(data) {
+      data.forEach((element) => {
+
+        if(element.category==="IB POWER BRAND"){
+            
+            let indiv = document.createElement("div");
+            indiv.setAttribute("class","card1")
+            let img=document.createElement("img")
+            img.setAttribute("src",element.image)
+
+            let para1 = document.createElement("p");
+            para1.setAttribute("id","detail")
+            para1.innerText=element.Description
+
+            let para2 = document.createElement("p");
+            para2.setAttribute("id","des")
+            para2.innerText=element.title
+
+            let hed3 = document.createElement("h3");
+            hed3.innerText=`₹${element.price}`
+            
+            
+    
+           
+            indiv.append(img, para1, para2,hed3);
+            main1.append(indiv);
+
+        }
+
+
+
+        if(element.category===" Best Sellers"){
+            
+          let indiv = document.createElement("div");
+          indiv.setAttribute("class","card1")
+          let img=document.createElement("img")
+          img.setAttribute("src",element.image)
+
+          let para1 = document.createElement("p");
+          para1.setAttribute("id","detail")
+          para1.innerText=element.Description
+
+          let para2 = document.createElement("p");
+          para2.setAttribute("id","des")
+          para2.innerText=element.title
+
+          let hed3 = document.createElement("h3");
+          hed3.innerText=`₹${element.price}`
+          
+          
+  
+         
+          indiv.append(img, para1, para2,hed3);
+          main2.append(indiv);
+
+      }
+
+
+
+      if(element.category===" NEW ARRIVALS"){
+            
+        let indiv = document.createElement("div");
+        indiv.setAttribute("class","card1")
+        let img=document.createElement("img")
+        img.setAttribute("src",element.image)
+
+        let para1 = document.createElement("p");
+        para1.setAttribute("id","detail")
+        para1.innerText=element.Description
+
+        let para2 = document.createElement("p");
+        para2.setAttribute("id","des")
+        para2.innerText=element.title
+
+        let hed3 = document.createElement("h3");
+        hed3.innerText=`₹${element.price}`
+        
+        
+
+       
+        indiv.append(img, para1, para2,hed3);
+        main3.append(indiv);
+
+    }
+       
+      });
+      
+    }
