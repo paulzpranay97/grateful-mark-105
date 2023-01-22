@@ -1,5 +1,5 @@
  *{
-    margin: 0;
+    
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
@@ -11,7 +11,7 @@
     background-color: rgb(242, 239, 239);
  }
  #main{
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +42,8 @@
     justify-content: center;
 }
 #left img{
-    width: 100%;
+    width:100%;
+    
 }
 #right{
     display: flex;
@@ -354,7 +355,7 @@ margin: auto;
    #product1{
     display: grid;
     grid-template-columns: repeat(2,400px);
-    grid-template-rows:repeat(2,292px) ;
+    
     gap: 5px;
 
     
@@ -414,7 +415,7 @@ margin: auto;
    #main3{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:292px ;
+    
     gap: 4px;
     /* margin-left: 260px; */
    }
@@ -473,7 +474,6 @@ margin: auto;
 #main4{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:292px ;
     gap: 4px;
     /* margin-left: 260px; */
    }
@@ -533,7 +533,7 @@ margin: auto;
 #main5{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:292px ;
+
     gap: 4px;
     /* margin-left: 260px; */
    }
@@ -592,7 +592,6 @@ margin: auto;
 #main6{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:292px ;
     gap: 4px;
     /* margin-left: 260px; */
    }
@@ -651,7 +650,6 @@ margin: auto;
 #main7{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:292px ;
     gap: 4px;
     /* margin-left: 260px; */
    }
