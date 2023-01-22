@@ -8,11 +8,26 @@
     <style>
     
  
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+ }
  body{
-    width: 100%;
+    width:100%;
     margin: auto;
     background-color: rgb(242, 239, 239);
  }
+ #main{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
  /* NAVBAR CSS START........ */
 
  #navbar{
@@ -66,7 +81,7 @@ align-items: center;
 
 #search{
     width:23vw;
-    height: 20px;
+    height: 40px;
     border: none;
     padding: 10px;
     
@@ -167,45 +182,94 @@ margin: auto;
 /* NAVBAR CSSSS ***********DONE */
       /* Write all necessery css here  */
       
-        
+      #mainpro{
+        width:100%;
+
+      }  
     
 
-      
       #product-container{
-        display: grid;
-        grid-template-columns: 20% 20% 20% 20%;
-        grid-template-rows: 500px;
-        grid-gap: 30px;
-        justify-content: center;
-      }
-      #product-container>div{
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-        padding: 10px;
-      }
-      #product-container>div>img{
-        height: 200px;
-        width: 100%;
-      }
-      #product-container>div>button{
-        display: block;
-        margin: auto;
-        background-color: rgb(81, 201, 245);
-        color: white;
-        padding: 5px;
-        border: none;
-        border-radius: 3px;
-      } 
-     
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    gap: 20px;
+    width: fit-content;
+    margin: auto;
+    
+    
+   }
+   #product-container>div{
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-top: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 5px;
+    
+
+   }
+   #product-container img{
+    width: 100%;
+    height: 160px;
+   }
+   
+   #product-container h1{
+    font-size: 18px;
+    margin-left: 5px;
+   }
+   #product-container h4{
+    text-align: start;
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(49, 45, 45);
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+    
+   }
+   #product-container p{
+    text-align:start ;
+    margin-left: 5px;
+    font-size: 70%;
+    color: rgb(89, 88, 88);
+    margin-top: 5px;
+
+   }
+   #product-container h2{
+    margin-top: 5px;
+    margin-left: 5px;
+    
+    
+   }
+#product-container .buy{
+    
+    border: none;
+    color: white;
+    background-color: #f82626;
+    border-radius:30px;
+    margin-left: 75px;
+    padding: 10px 20px 10px 20px;
+    
+
+}
+#product-container .add{
+    
+    border: none;
+    color: white;
+    background-color: #f82626;
+    border-radius: 30px;
+    padding: 10px 20px 10px 20px;
+
+
+}
     </style>
   </head>
 
   <body>
 
+    <div id="main">
 
-
-<!-- NAVABAR STARTED.........******* -->
-    <!-- navbar..... -->
-  <div id="navbar">
+      <div id="navbar">
         
         <div id="left">
             <img src="https://www.industrybuying.com/static/images/industry-buying-white-logo.png" alt="Error">
@@ -264,7 +328,7 @@ margin: auto;
 
     </div>
         </div>
-</div> -->
+</div> 
 
        <!-- NAVBAR COMPLETED........******* -->
 
@@ -274,19 +338,31 @@ margin: auto;
         <!-- Here Append All the Products  -->
      </div>
     </div> 
+
+
+
+
+
+    </div>
+
+<!-- NAVABAR STARTED.........******* -->
+    <!-- navbar..... -->
+  
     
     
    
   </body>
   <script>
 
-   let API = "https://63c66b68d307b7696738a8cf.mockapi.io/products"
+   const API = "https://63c66b68d307b7696738a8cf.mockapi.io/products"
     async function FetchData(){
       try{
         let request=await fetch(API);
        let  data= await request.json();
         console.log(data);
-         FilterData(data)
+         FilterData(data);
+        //  Scarchdata(data);
+         
       }catch(err){
         console.log(err)
       }
@@ -308,6 +384,49 @@ margin: auto;
       }
     }
 
+
+
+    async function NFetchData(){
+      try{
+        let request=await fetch(API);
+       let  sdata= await request.json();
+        console.log(sdata);
+         
+          Scarchdata(sdata);
+         
+      }catch(err){
+        console.log(err)
+      }
+    }
+
+    NFetchData()
+    let searchForm = document.querySelector("form");
+    searchForm.addEventListener("submit",(e)=>{
+      NFetchData()
+      e.preventDefault();
+     
+
+     
+    })
+    function Scarchdata(sdata){
+        let searchParams = searchForm.search.value;
+      sdata = sdata.filter((element) => {
+            if (
+                element.name.toUpperCase().includes(searchParams.toUpperCase()) ===
+                true
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        DisplayProduct(sdata);
+    }
+
+
+
+
+
     let CartArr = JSON.parse(localStorage.getItem("cart"))||[];
 
 let Container = document.getElementById("product-container")
@@ -319,12 +438,16 @@ let Container = document.getElementById("product-container")
       data.forEach((product,i) => {
         let card = document.createElement("div");
         let image = document.createElement("img");
-        let brand = document.createElement("h3");
+        let brand = document.createElement("h1");
         let category = document.createElement("p");
         let details = document.createElement("p");
-        let price = document.createElement("h4");
+        let price = document.createElement("h2");
         let add_to_cart = document.createElement("button");
-
+        let buy = document.createElement("button")
+        buy.setAttribute("class","buy")
+        add_to_cart.setAttribute("class","add")
+        buy.innerText= "Buy Now"
+        let des = document.createElement("h4")
        
         image.src = product.image;
         brand.textContent = product.name;
@@ -332,6 +455,7 @@ let Container = document.getElementById("product-container")
         price.textContent = `₹${product.price}`;
         details.textContent = product.title;
         add_to_cart.textContent = "Add to Cart";
+        des.innerText = product.Description;
 
         add_to_cart.addEventListener("click",()=>{
             if(checkDuplicate(product)){
@@ -345,7 +469,7 @@ let Container = document.getElementById("product-container")
         })
 
 
-        card.append(image,brand,price,details,category,add_to_cart);
+        card.append(image,brand,des,price,details,category,add_to_cart,buy);
         Container.append(card);
 
       });
@@ -377,6 +501,14 @@ for(let i=0;i<Cart.length;i++)
 }
 
 totalPro.textContent=count;
+
+
+
+
+    
+
+
+   
   
 
   

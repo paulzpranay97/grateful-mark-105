@@ -16,6 +16,18 @@
     text-decoration: none;
     list-style: none;
  }
+ body{
+    width:100%;
+    margin: auto;
+    background-color: rgb(242, 239, 239);
+ }
+ #main{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
  #navbar{
     background-color: #232f3e;
     display:flex;
@@ -25,8 +37,9 @@
     align-items: center;
     height: 10vh;
     margin: auto;
-    position: fixed;
+    position: sticky;
     top: 0;
+    z-index: 1;
     
   }
   
@@ -160,6 +173,7 @@ margin: auto;
     height: 15px;
     width: 50%;   
 }
+
 /* END...... */
 
 /* DOWONLOAD APP CSS STAR.... */
@@ -168,37 +182,130 @@ margin: auto;
       /* Write all necessery css here  */
         
       
-      #cart-container{
-        display: grid;
-        grid-template-columns: 20% 20% 20% 20%;
-        grid-gap: 30px;
-        justify-content: center;
-        
-      }
-      #cart-container>div{
-        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-        padding: 10px;
-      }
-      #cart-container>div>img{
-        height: 200px;
-        width: 100%;
-      }
-      #cart-container>div>button{
-        
-        background-color: rgb(81, 201, 245);
-        color: white;
-        padding: 5px;
-        border: none;
-        border-radius: 3px;
-        margin: 10px;
-      }
       #mainpro{
-        margin-top: 200px;
-      }
+        width:100%;
+background: #ffffff;
+background: -webkit-linear-gradient(top, #fff5f5, #F8F8F8);
+background: -moz-linear-gradient(top, #e5dfdf, #F8F8F8);
+background: linear-gradient(to bottom, #343434, #F8F8F8);
+
+      }  
+    
+
+      #product-container{
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    grid-template-rows:450px ;
+    gap: 20px;
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    
+    
+   }
+   #product-container>div{
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    padding-top: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 5px;
+    
+
+   }
+   #product-container img{
+    width: 100%;
+    height: 230px;
+   }
+   
+   #product-container h1{
+    font-size: 18px;
+    margin-left: 5px;
+   }
+   #product-container h4{
+    text-align: start;
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(49, 45, 45);
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+
+    
+   }
+   #product-container p{
+    text-align:start ;
+    margin-left: 5px;
+    font-size: 70%;
+    color: rgb(89, 88, 88);
+    margin-top: 5px;
+
+   }
+   #product-container h2{
+    margin-top: 5px;
+    margin-left: 5px;  
+   }
+   #product-container .rem{
+    border: none;
+    color: white;
+    background-color: #f82626;
+    border-radius:30px;
+    margin-left: 80px;
+    padding: 10px 20px 10px 20px;
+   }
+   #product-container .inc{
+    border: none;
+    color: white;
+    background-color: #f82626;
+    border-radius:5px;
+    padding: 0px 6px 0px 6px;
+    font-size: 30px;
+    margin-top: 10px;
+   }
+   #product-container .dec{
+    border: none;
+    color: white;
+    background-color: #f82626;
+    border-radius:5px;
+    font-size: 30px;
+    
+    padding: 0px 10px 0px 10px;
+    margin-left: 25px;
+
+   }
+   .carttop{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content:space-around ;
+    align-items: center;
+   
+   }
+   .carttop button{
+    width: 120px;
+    height: 50px;
+    border: none;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    background-color: #FF0000;
+    color: aliceblue;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+   }
+   .carttop h1{
+    color: rgb(187, 187, 187);
+    word-spacing: 5px;
+    letter-spacing: 3px;
+   }
     </style>
   </head>
   <body>
-      <!-- navbar..... -->
+
+    <div id="main">
+
       <div id="navbar">
         
         <div id="left">
@@ -265,17 +372,24 @@ margin: auto;
 </div>
 
 
-    <div id="mainpro"><h1 id="total">Your Total cart Price is:- Rs <span id="cart-total">0</span></h1>
-    <div id="cart-container">
+    <div id="mainpro">
+      <div class="carttop"><h1 id="total">Your Total Cart Price is : ₹ <span id="cart-total">0</span></h1>
+        <button id="buy">BUY NOW</button>
+      </div>
+    <div id="product-container">
       <!-- Here Append All the cart Products -->
     </div>
    </div>
+
+    </div>
+  
+     
      
   </body>
   <script>
     // Write all necessery JS here 
 let Cart= JSON.parse(localStorage.getItem("cart"))||[];
-let Container = document.getElementById("cart-container");
+let Container = document.getElementById("product-container");
 
     function DisplayProduct(data){
       let total = document.getElementById("cart-total")
@@ -284,17 +398,22 @@ Container.innerHTML = "";
 Cart.forEach((product) => {
   let card = document.createElement("div");
   let image = document.createElement("img");
-  let brand = document.createElement("h3");
+  let brand = document.createElement("h1");
   let category = document.createElement("p");
   let details = document.createElement("p");
-  let quantity= document.createElement("p");
+  let quantity= document.createElement("h4");
 
-  let price = document.createElement("h4");
+  let price = document.createElement("h2");
   let Remove = document.createElement("button");
+  Remove.setAttribute("class","rem")
   let Increment = document.createElement("button");
+  Increment.setAttribute("class","inc")
   let Decrement = document.createElement("button");
+  Decrement.setAttribute("class","dec")
+  let des = document.createElement("h4")
+  des.innerText = product.Description;
 
-  quantity.textContent= product.quantity;
+  quantity.textContent= `Quantity: ${product.quantity}`;
   image.src = product.image;
   brand.textContent = product.name;
   category.textContent = product.category;
@@ -325,7 +444,7 @@ Cart.forEach((product) => {
     })
 
 
-  card.append(image,brand,price,details,category,Remove,Increment,Decrement,quantity);
+  card.append(image,brand,des,details,price,quantity,Increment,Decrement,Remove);
   Container.append(card);
 
 });

@@ -6,10 +6,17 @@
     list-style: none;
  }
  body{
-    width: 100%;
+    width:100%;
     margin: auto;
     background-color: rgb(242, 239, 239);
  }
+ #main{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
  /* NAVBAR CSS START........ */
 
  #navbar{
@@ -194,10 +201,7 @@ margin: auto;
 }
 /* NAVBAR CSSSS ***********DONE */
 /* <!-- BODY UPPER SLIDING WINDOW AND ALL OTHER DIV******* --> */
-#main{
-    width: 100%;
-    margin-top: 70px;
-}
+
 #head{
     display: grid;
     grid-template-columns: repeat(4,250px);
@@ -205,7 +209,7 @@ margin: auto;
     width: fit-content;
     margin-top: 10px;
     gap: 10px;
-    margin-left: 260px;
+    /* margin-left: 260px; */
 }
 #head :nth-child(1) {
     grid-column-start: 1;
@@ -292,8 +296,8 @@ margin: auto;
     padding-top: 10px;
     width: fit-content;
     gap: 10px;
-    margin: auto;
-    margin-left: 260px;
+    /* margin: auto; */
+    /* margin-left: 260px; */
     height: fit-content;
    }
    #left1{
@@ -331,7 +335,7 @@ margin: auto;
    /* main2 completetd   ****** */
    #bar2{
     width: 1030px;
-    margin-left: 260px;
+    /* margin-left: 260px; */
     padding-top: 10px;
    
    
@@ -340,116 +344,368 @@ margin: auto;
    #bar2 img{
     width: 100%;
    }
-
+   .heading{
+    margin-left: 260px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+   }
 
 
    #product1{
     display: grid;
-    grid-template-columns: repeat(4,200px);
+    grid-template-columns: repeat(2,400px);
     grid-template-rows:repeat(2,292px) ;
-    gap: 4px;
+    gap: 5px;
+
     
+    
+   }
+   #product1>div{
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 5px 10px 5px 5px;
+    
+
    }
    #product1 img{
     width: 100%;
-    height: 150px;
+    height: 160px;
    }
-   #product1 hr{
-    border-top: 1px dashed #8c8b8b;
+   
+   #product1 h1{
+    font-size: 18px;
+    margin-left: 5px;
    }
-   #detail{
+   #product1 h4{
     text-align: start;
     margin-left: 5px;
     font-size: 15px;
     color: rgb(49, 45, 45);
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
     
    }
-   #des{
+   #product1 p{
     text-align:start ;
     margin-left: 5px;
     font-size: 70%;
     color: rgb(89, 88, 88);
+    margin-top: 5px;
 
    }
-   #price{
-    text-align: end ;
-    margin-right: 5px;
-    color: #FF0000;
+   #product1 h3{
+    margin-top: 5px;
+    margin-left: 5px;
    }
-   .card1{
-    background-color: white;
-
-   }
+#product1 button{
+    align-items: center;
+    border: none;
+    color: white;
+    background-color: #f82626;
+    width: 180px;
+    height: 30px;
+    border-radius: 3px;
+    margin-left: 100px;
+}
 
 
    #main3{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:repeat(2,292px) ;
+    grid-template-rows:292px ;
     gap: 4px;
-    margin-left: 260px;
+    /* margin-left: 260px; */
+   }
+   #main3>div{
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    
+
    }
    #main3 img{
     width: 100%;
+    height: 160px;
    }
-   #main>h3{
-    margin-left: 260px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+   #main3 h1{
+    font-size: 18px;
+    margin-left: 5px;
    }
+   
+   #main3 h4{
+    text-align: start;
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(49, 45, 45);
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+    
+   }
+   #main3 p{
+    text-align:start ;
+    margin-left: 5px;
+    font-size: 70%;
+    color: rgb(89, 88, 88);
+    margin-top: 5px;
+
+   }
+   #main3 h3{
+    margin-top: 5px;
+    margin-left: 5px;
+   }
+#main3 button{
+    align-items: center;
+    border: none;
+    color: white;
+    background-color: #f82626;
+    width: 180px;
+    height: 30px;
+    border-radius: 3px;
+}
+
    
 
 
-   #main4{
+#main4{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:repeat(2,292px) ;
+    grid-template-rows:292px ;
     gap: 4px;
-    margin-left: 260px;
+    /* margin-left: 260px; */
+   }
+   #main4>div{
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    
+
    }
    #main4 img{
     width: 100%;
+    height: 160px;
    }
+   #main4 h1{
+    font-size: 18px;
+    margin-left: 5px;
+   }
+   
+   #main4 h4{
+    text-align: start;
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(49, 45, 45);
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+    
+   }
+   #main4 p{
+    text-align:start ;
+    margin-left: 5px;
+    font-size: 70%;
+    color: rgb(89, 88, 88);
+    margin-top: 5px;
+
+   }
+   #main4 h3{
+    margin-top: 5px;
+    margin-left: 5px;
+   }
+#main4 button{
+    align-items: center;
+    border: none;
+    color: white;
+    background-color: #f82626;
+    width: 180px;
+    height: 30px;
+    border-radius: 3px;
+}
+
   
 
 
 
-   #main5{
+#main5{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:repeat(2,292px) ;
+    grid-template-rows:292px ;
     gap: 4px;
-    margin-left: 260px;
+    /* margin-left: 260px; */
+   }
+   #main5>div{
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    
+
    }
    #main5 img{
     width: 100%;
+    height: 160px;
    }
    
+   #main5 h1{
+    font-size: 18px;
+    margin-left: 5px;
+   }
+
+   #main5 h4{
+    text-align: start;
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(49, 45, 45);
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+    
+   }
+   #main5 p{
+    text-align:start ;
+    margin-left: 5px;
+    font-size: 70%;
+    color: rgb(89, 88, 88);
+    margin-top: 5px;
+
+   }
+   #main5 h3{
+    margin-top: 5px;
+    margin-left: 5px;
+   }
+#main5 button{
+    align-items: center;
+    border: none;
+    color: white;
+    background-color: #f82626;
+    width: 180px;
+    height: 30px;
+    border-radius: 3px;
+}
 
 
-   #main6{
+
+#main6{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:repeat(2,292px) ;
+    grid-template-rows:292px ;
     gap: 4px;
-    margin-left: 260px;
+    /* margin-left: 260px; */
+   }
+   #main6>div{
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    
+
    }
    #main6 img{
     width: 100%;
+    height: 160px;
    }
    
+   #main6 h1{
+    font-size: 18px;
+    margin-left: 5px;
+   }
+
+   #main6 h4{
+    text-align: start;
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(49, 45, 45);
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+    
+   }
+   #main6 p{
+    text-align:start ;
+    margin-left: 5px;
+    font-size: 70%;
+    color: rgb(89, 88, 88);
+    margin-top: 5px;
+
+   }
+   #main6 h3{
+    margin-top: 5px;
+    margin-left: 5px;
+   }
+#main6 button{
+    align-items: center;
+    border: none;
+    color: white;
+    background-color: #f82626;
+    width: 180px;
+    height: 30px;
+    border-radius: 3px;
+}
 
 
-   #main7{
+
+#main7{
     display: grid;
     grid-template-columns: repeat(5,203px);
-    grid-template-rows:repeat(2,292px) ;
+    grid-template-rows:292px ;
     gap: 4px;
-    margin-left: 260px;
+    /* margin-left: 260px; */
+   }
+   #main7>div{
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    
+
    }
    #main7 img{
     width: 100%;
+    height: 160px;
    }
+   
+   #main7 h1{
+    font-size: 18px;
+    margin-left: 5px;
+   }
+
+   #main7 h4{
+    text-align: start;
+    margin-left: 5px;
+    font-size: 15px;
+    color: rgb(49, 45, 45);
+    overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+    
+   }
+   #main7 p{
+    text-align:start ;
+    margin-left: 5px;
+    font-size: 70%;
+    color: rgb(89, 88, 88);
+    margin-top: 5px;
+
+   }
+   #main7 h3{
+    margin-top: 5px;
+    margin-left: 5px;
+   }
+#main7 button{
+    align-items: center;
+    border: none;
+    color: white;
+    background-color: #f82626;
+    width: 180px;
+    height: 30px;
+    border-radius: 3px;
+
+}
+
    
 
   
@@ -459,13 +715,16 @@ margin: auto;
 /* FOOTER CSSS .............................. */
 .footer {
     background: #232f3e;
-
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 100%;
 }
 
 .fthd {
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     color: #999;
     gap: 40px;
 }
@@ -488,15 +747,16 @@ margin: auto;
 
 .ftlast {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 100%;
 }
 
-/* .ftList{
-list-style: none;
-} */
+
 .signup {
     display: flex;
-    /* margin-left: 70px; */
+
 
 }
 

@@ -60,7 +60,7 @@ select.addEventListener("change", (event) => {
         }
     }
     
-   
+    let CartArr = JSON.parse(localStorage.getItem("cart"))||[];
  
       let main1 = document.querySelector("#product1");
       let main2 = document.querySelector("#main3");
@@ -81,7 +81,10 @@ select.addEventListener("change", (event) => {
             let img=document.createElement("img")
             img.setAttribute("src",element.image)
 
-            let para1 = document.createElement("p");
+            let name = document.createElement("h1")
+            name.innerText = element.name;
+
+            let para1 = document.createElement("h4");
             para1.setAttribute("id","detail")
             para1.innerText=element.Description
 
@@ -95,11 +98,24 @@ select.addEventListener("change", (event) => {
 
             let btn = document.createElement("button");
             btn.setAttribute("class","btn");
-            btn.innerText = "Buy Now";
+            btn.innerText = "ADD TO CART";
+
+
+
+            btn.addEventListener("click",()=>{
+              if(checkDuplicate(element)){
+                alert("Product Already in Cart")
+              }else{
+                CartArr.push({...element,quantity:1});
+                localStorage.setItem("cart",JSON.stringify(CartArr));
+                alert("Product Added To Cart")
+                window.location.href = "./index.html"
+              }
+          })
             
     
            
-            indiv.append(img, para1, para2,hed3,btn);
+            indiv.append(img,name, para1, para2,hed3,btn);
             main1.append(indiv);
 
         }
@@ -113,7 +129,10 @@ select.addEventListener("change", (event) => {
           let img=document.createElement("img")
           img.setAttribute("src",element.image)
 
-          let para1 = document.createElement("p");
+          let name = document.createElement("h1")
+          name.innerText = element.name;
+
+          let para1 = document.createElement("h4");
           para1.setAttribute("id","detail")
           para1.innerText=element.Description
 
@@ -127,9 +146,21 @@ select.addEventListener("change", (event) => {
           
           let btn = document.createElement("button");
           btn.setAttribute("class","btn");
-          btn.innerText = "Buy Now"
+          btn.innerText = "ADD TO CART"
+
+
+          btn.addEventListener("click",()=>{
+            if(checkDuplicate(element)){
+              alert("Product Already in Cart")
+            }else{
+              CartArr.push({...element,quantity:1});
+              localStorage.setItem("cart",JSON.stringify(CartArr));
+              alert("Product Added To Cart")
+              window.location.href = "./index.html"
+            }
+        })
          
-          indiv.append(img, para1, para2,hed3,btn);
+          indiv.append(img,name, para1, para2,hed3,btn);
           main2.append(indiv);
 
       }
@@ -143,7 +174,10 @@ select.addEventListener("change", (event) => {
         let img=document.createElement("img")
         img.setAttribute("src",element.image)
 
-        let para1 = document.createElement("p");
+        let name = document.createElement("h1")
+        name.innerText = element.name;
+
+        let para1 = document.createElement("h4");
         para1.setAttribute("id","detail")
         para1.innerText=element.Description
 
@@ -157,9 +191,21 @@ select.addEventListener("change", (event) => {
         
         let btn = document.createElement("button");
         btn.setAttribute("class","btn");
-        btn.innerText = "Buy Now"
+        btn.innerText = "ADD TO CART"
+
+
+        btn.addEventListener("click",()=>{
+          if(checkDuplicate(element)){
+            alert("Product Already in Cart")
+          }else{
+            CartArr.push({...element,quantity:1});
+            localStorage.setItem("cart",JSON.stringify(CartArr));
+            alert("Product Added To Cart")
+            window.location.href = "./index.html"
+          }
+      })
        
-        indiv.append(img, para1, para2,hed3,btn);
+        indiv.append(img,name, para1, para2,hed3,btn);
         main3.append(indiv);
 
     }
@@ -171,7 +217,10 @@ select.addEventListener("change", (event) => {
       let img=document.createElement("img")
       img.setAttribute("src",element.image)
 
-      let para1 = document.createElement("p");
+      let name = document.createElement("h1")
+      name.innerText = element.name;
+
+      let para1 = document.createElement("h4");
       para1.setAttribute("id","detail")
       para1.innerText=element.Description
 
@@ -184,10 +233,23 @@ select.addEventListener("change", (event) => {
       
       let btn = document.createElement("button");
       btn.setAttribute("class","btn");
-      btn.innerText = "Buy Now"
+      btn.innerText = "ADD TO CART"
+
+
+
+      btn.addEventListener("click",()=>{
+        if(checkDuplicate(element)){
+          alert("Product Already in Cart")
+        }else{
+          CartArr.push({...element,quantity:1});
+          localStorage.setItem("cart",JSON.stringify(CartArr));
+          alert("Product Added To Cart")
+          window.location.href = "./index.html"
+        }
+    })
 
      
-      indiv.append(img, para1, para2,hed3,btn);
+      indiv.append(img,name, para1, para2,hed3,btn);
       main4.append(indiv);
 
   }
@@ -199,7 +261,10 @@ select.addEventListener("change", (event) => {
     let img=document.createElement("img")
     img.setAttribute("src",element.image)
 
-    let para1 = document.createElement("p");
+    let name = document.createElement("h1")
+    name.innerText = element.name;
+
+    let para1 = document.createElement("h4");
     para1.setAttribute("id","detail")
     para1.innerText=element.Description
 
@@ -211,9 +276,24 @@ select.addEventListener("change", (event) => {
     hed3.innerText=`₹${element.price}`
     
     
+    let btn = document.createElement("button");
+      btn.setAttribute("class","btn");
+      btn.innerText = "ADD TO CART"
 
+
+
+      btn.addEventListener("click",()=>{
+        if(checkDuplicate(element)){
+          alert("Product Already in Cart")
+        }else{
+          CartArr.push({...element,quantity:1});
+          localStorage.setItem("cart",JSON.stringify(CartArr));
+          alert("Product Added To Cart")
+          window.location.href = "./index.html"
+        }
+    })
    
-    indiv.append(img, para1, para2,hed3);
+    indiv.append(img,name, para1, para2,hed3,btn);
     main5.append(indiv);
 
 }
@@ -225,7 +305,10 @@ if(element.category==="IT & Electronics"){
   let img=document.createElement("img")
   img.setAttribute("src",element.image)
 
-  let para1 = document.createElement("p");
+  let name = document.createElement("h1")
+  name.innerText = element.name;
+
+  let para1 = document.createElement("h4");
   para1.setAttribute("id","detail")
   para1.innerText=element.Description
 
@@ -236,10 +319,25 @@ if(element.category==="IT & Electronics"){
   let hed3 = document.createElement("h3");
   hed3.innerText=`₹${element.price}`
   
-  
+  let btn = document.createElement("button");
+      btn.setAttribute("class","btn");
+      btn.innerText = "ADD TO CART"
+
+
+
+      btn.addEventListener("click",()=>{
+        if(checkDuplicate(element)){
+          alert("Product Already in Cart")
+        }else{
+          CartArr.push({...element,quantity:1});
+          localStorage.setItem("cart",JSON.stringify(CartArr));
+          alert("Product Added To Cart")
+          window.location.href = "./index.html"
+        }
+    })
 
  
-  indiv.append(img, para1, para2,hed3);
+  indiv.append(img,name, para1, para2,hed3,btn);
   main6.append(indiv);
 
 }
@@ -250,3 +348,15 @@ if(element.category==="IT & Electronics"){
       
     }
     
+
+
+    function checkDuplicate(element){
+      for(let i=0; i<CartArr.length;i++){
+  
+        if(CartArr[i].id===element.id){
+          return true;
+        
+        }
+      }
+      return false;
+      }
